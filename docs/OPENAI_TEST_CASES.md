@@ -2,7 +2,7 @@
 
 Use the synthetic fixture described in `TEST_ACCOUNT_SPEC.md`. Reset it before submission. Credentials belong only in OpenAI's private reviewer-credential field, never in source control.
 
-The cases below are written so they can be copied into a submission form that asks for positive/negative tests and expected outcomes.
+The cases below are written so they can be copied into OpenAI's submission form. Keep at least five positive tests and three negative tests in the portal.
 
 ## Positive tests
 
@@ -46,7 +46,7 @@ Private OAuth connection, then `get_my_day` for the appropriate calendar date.
 
 **Expected result**
 
-The assistant reports only source-backed academic meetings and any explicitly delegated personal/gap context. Course/section/time/location facts match the synthetic Gapwise fixture. Missing facts are not invented.
+The assistant reports only source-backed academic meetings, reserved-assessment semantics, and any explicitly delegated Gapwise gap context. Course/section/time/location facts match the synthetic Gapwise fixture. Missing facts are not invented.
 
 ### 4. Find a realistic study opportunity
 
@@ -62,19 +62,19 @@ The assistant reports only source-backed academic meetings and any explicitly de
 
 The assistant uses Gapwise's availability/activity-budget results rather than subtracting timetable intervals itself. Temporal-only opportunities remain identified as temporal-only and unavailable routes are not described as validated travel plans.
 
-### 5. Queue a safe personal item
+### 5. Queue a safe preference update
 
 **Prompt**
 
-> Add a gym session Wednesday from 3:00 to 4:00 PM if it fits my schedule.
+> Set my Gapwise risk tolerance to low.
 
 **Expected tools**
 
-A current private read/revision, `check_my_plan_feasibility` on the exact interval, then `create_personal_item` only if permitted/feasible.
+A current private read that exposes the snapshot revision, then `update_gap_preferences` with `patch: { riskTolerance: "low" }` when preference-write permission is enabled.
 
 **Expected result**
 
-The create call has `readOnlyHint=false`, `destructiveHint=false`, uses the current `expectedRevision`, and returns a queued Gapwise action. The assistant does not claim the canonical timetable changed until a subsequent read confirms Gapwise applied it.
+The write uses the current `expectedRevision`, is non-destructive/idempotent, and returns a queued Gapwise action. The assistant does not claim the canonical preference changed until a subsequent read confirms Gapwise applied it.
 
 ## Negative tests
 
@@ -86,7 +86,7 @@ The create call has `readOnlyHint=false`, `destructiveHint=false`, uses the curr
 
 **Expected result**
 
-No academic mutation is possible. The assistant explains that imported/source-backed academic meetings are read-only. It must not repurpose a personal-item deletion tool to target an academic class.
+No academic mutation is possible. The assistant explains that imported/source-backed academic meetings are read-only and does not repurpose another write tool to alter them.
 
 ### 2. Cross-account/privacy boundary
 
@@ -114,8 +114,9 @@ The private call fails closed and returns no timetable data. The client receives
 
 ## Additional recommended reviewer checks
 
-- write-disabled delegation rejects create/update/delete/preference writes;
+- write-disabled delegation rejects `update_gap_preferences`;
 - stale `expectedRevision` returns a conflict and does not overwrite newer state;
-- `delete_personal_item` is advertised as destructive while create/update/preference writes are non-destructive state changes;
-- public tools have no private OAuth `securitySchemes` while all private tools do;
+- public campus tools have no private OAuth `securitySchemes` and advertise `openWorldHint: true`;
+- private account tools carry OAuth metadata and remain bounded to the caller's Gapwise account;
+- academic schedule data is read-only;
 - tool output remains bounded and private tool arguments/results do not appear in Gapwise application logs.
