@@ -62,7 +62,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
         "List canonical UTM buildings and Gapwise's current routing/accessibility coverage and provenance. This is public stateless campus data: it does not read the user's timetable, account, friends, location, or private sync state. Prefer search_utm_buildings when the user gives a partial name, abbreviation, or uncertain building reference.",
       inputSchema: z.object({}).strict(),
       outputSchema: PublicBuildingsOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async () => {
       try {
@@ -87,7 +87,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
         })
         .strict(),
       outputSchema: PublicBuildingSearchOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async ({ query, maxResults }) => {
       try {
@@ -116,7 +116,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
         "Resolve one exact canonical UTM building by code, official name, or known alias and return Gapwise routing coverage, accessibility state and provenance. Fails closed on unknown or ambiguous names rather than guessing. Use search_utm_buildings first when the reference is partial or uncertain.",
       inputSchema: z.object({ query: z.string().min(1).max(240) }).strict(),
       outputSchema: PublicBuildingOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async ({ query }) => {
       try {
@@ -148,7 +148,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
           { message: "Provide a query or at least one place filter." },
         ),
       outputSchema: PublicPlaceSearchOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async (args) => {
       try {
@@ -172,7 +172,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
         })
         .strict(),
       outputSchema: PublicPlaceOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async ({ id }) => {
       try {
@@ -200,7 +200,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
         })
         .strict(),
       outputSchema: PublicRouteOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async (args) => {
       try {
@@ -234,7 +234,7 @@ export function registerPublicCampusTools(server: McpRegistrar): void {
           message: "endTime must be after startTime",
         }),
       outputSchema: PublicGapPlanOutputSchema,
-      annotations: { readOnlyHint: true, openWorldHint: false },
+      annotations: { readOnlyHint: true, openWorldHint: true },
     },
     async (args) => {
       try {

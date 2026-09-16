@@ -20,9 +20,9 @@ const TOOL_DESCRIPTION_OVERRIDES: Readonly<Record<string, string>> = {
   get_my_gap_plan:
     "Returns Gapwise's precomputed deterministic assessment for one exact delegated gap, including boundaries, recommendation, route status/confidence, travel and buffer time, leave-by/arrival time, shared preferences, and warnings. Returns an error when no matching delegated plan exists.",
   get_my_decision_context:
-    "Returns a compact planning summary for one term: hard schedule load, delegated fixed personal constraints, authoritative Gapwise gap opportunities, route uncertainty, freshness/revision, and any planning or routing preferences the user allowed AI to read.",
+    "Returns a compact planning summary for one term: hard academic schedule load, authoritative Gapwise gap opportunities, route uncertainty, freshness/revision, and any planning or routing preferences the user allowed AI to read.",
   find_my_available_windows:
-    "Finds source-backed free windows for one date or term weekday using delegated academic meetings and permitted fixed personal items as hard constraints. Flexible personal items are returned as soft competing constraints. Without explicit search bounds, only windows between known hard events are returned.",
+    "Finds source-backed free windows for one date or term weekday using delegated academic meetings as hard constraints. Reserved assessment placeholders are ignored. Without explicit search bounds, only windows between known hard events are returned.",
   find_my_weekly_opportunities:
     "Searches all seven weekdays for usable planning opportunities in one academic term. Raw free gaps are capped by delegated deterministic Gapwise activity budgets; gaps with unavailable surrounding routes contribute zero validated activity minutes; gaps without a delegated assessment are marked temporal-only.",
   check_my_plan_feasibility:
