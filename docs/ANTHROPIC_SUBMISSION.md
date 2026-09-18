@@ -48,11 +48,11 @@ Gapwise should demonstrate that:
 Against the exact release SHA, complete:
 
 1. add `https://ai.gapwise.ca/api/mcp` as a custom remote connector;
-2. verify all 17 tools are discovered with the correct public/private authorization metadata;
+2. verify all 20 tools are discovered with the correct public/private authorization metadata;
 3. exercise public building/routing tools before private authorization;
 4. connect the synthetic reviewer Gapwise account through the normal OAuth/consent flow;
 5. exercise private day/week/decision/availability/gap/feasibility reads;
-6. exercise supported personal-item create/update/delete and preference update flows;
+6. exercise the preference update flow and verify that retired Personal Item tools are absent;
 7. verify write approval UX and tool annotations are sensible;
 8. verify no-delegation, read-only, write-disabled, stale-revision, academic-immutability, and cross-account failures;
 9. revoke access and confirm subsequent private tool calls fail;

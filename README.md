@@ -42,14 +42,17 @@ Canonical endpoint:
 https://ai.gapwise.ca/api/mcp
 ```
 
-The release surface contains **17 tools**.
+The release surface contains **20 tools**.
 
 ### Public, stateless UTM campus intelligence
 
-These four tools require no private Gapwise account context:
+These seven tools require no private Gapwise account context:
 
 - `list_utm_buildings`
+- `search_utm_buildings`
 - `get_utm_building`
+- `search_utm_places`
+- `get_utm_place`
 - `route_between_utm_buildings`
 - `plan_utm_gap_window`
 
@@ -57,11 +60,14 @@ They operate on deterministic public **UTM** campus data and never read a studen
 
 ### Permissioned private reads and planning
 
-Nine tools operate only on the connected user's explicitly delegated context:
+Twelve tools operate only on the connected user's explicitly delegated context:
 
 - `get_ai_delegation_status`
 - `get_my_day`
 - `get_my_week`
+- `search_my_schedule`
+- `get_my_course_context`
+- `get_my_schedule_range`
 - `get_my_gap_plan`
 - `get_my_ai_preferences`
 - `get_my_decision_context`
@@ -71,14 +77,13 @@ Nine tools operate only on the connected user's explicitly delegated context:
 
 ### Permissioned private writes
 
-Four tools can queue bounded user-authorized changes:
+One tool can queue bounded user-authorized preference changes:
 
-- `create_personal_item`
-- `update_personal_item`
-- `delete_personal_item`
 - `update_gap_preferences`
 
-Academic meetings remain source-backed and **cannot be created, edited, or deleted by an AI client**. Supported personal-item/preference writes are typed, permission-checked, revision-bound, idempotency-bounded, and queued for Gapwise rather than granting an assistant arbitrary access to canonical encrypted state.
+Academic meetings remain source-backed and **cannot be created, edited, or deleted by an AI client**. Personal Item tools are retired. Supported preference writes are typed, permission-checked, revision-bound, idempotency-bounded, and queued for Gapwise rather than granting an assistant arbitrary access to canonical encrypted state.
+
+The generated [surface manifest](contracts/mcp-live-surface.json) is verified against tool registrations by `npm run contract:check`. After changing registrations, run `npm run contract:generate` and sync the Docs consumer with `npm run mcp-contract:sync` in the sibling Docs checkout.
 
 For the exact behavioral contract, see [`docs/TOOL_CONTRACT.md`](docs/TOOL_CONTRACT.md).
 
