@@ -1,0 +1,43 @@
+{
+  "contractVersion": 2,
+  "registeredToolCount": 20,
+  "registeredTools": {
+    "publicRead": [
+      "list_utm_buildings",
+      "search_utm_buildings",
+      "get_utm_building",
+      "search_utm_places",
+      "get_utm_place",
+      "route_between_utm_buildings",
+      "plan_utm_gap_window"
+    ],
+    "privateRead": [
+      "get_ai_delegation_status",
+      "get_my_day",
+      "get_my_week",
+      "search_my_schedule",
+      "get_my_course_context",
+      "get_my_schedule_range",
+      "get_my_gap_plan",
+      "get_my_ai_preferences",
+      "get_my_decision_context",
+      "find_my_available_windows",
+      "find_my_weekly_opportunities",
+      "check_my_plan_feasibility"
+    ],
+    "privateWrite": [
+      "update_gap_preferences"
+    ]
+  },
+  "publicToolContract": {
+    "requiresGapwiseAccount": false,
+    "readsPrivateStudentState": false,
+    "statelessCampusIntelligence": true
+  },
+  "writeContract": {
+    "resultSemantics": "queued_for_gapwise",
+    "requiresExpectedRevision": true,
+    "supportsBoundedIdempotencyKey": true,
+    "academicMeetingMutationAllowed": false
+  }
+}

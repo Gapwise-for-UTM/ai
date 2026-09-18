@@ -8,7 +8,7 @@ Expose Gapwise's deterministic timetable, gap, and campus truth to MCP-capable a
 
 1. **Gapwise browser** owns the user's canonical academic timetable and main encrypted private state.
 2. **Supabase Auth** authenticates the user and, when OAuth 2.1 Server is enabled, issues user-scoped tokens to MCP clients.
-3. **Gapwise AI** is an explicitly delegated plaintext processing boundary. It receives only a minimized AI snapshot and AI-managed personal-item actions. At rest, those payloads are encrypted with a Vercel-only key before being written to Supabase.
+3. **Gapwise AI** is an explicitly delegated plaintext processing boundary. It receives only a minimized AI snapshot and bounded preference actions. At rest, those payloads are encrypted with a Vercel-only key before being written to Supabase.
 4. **Supabase Postgres** stores ciphertext and non-sensitive metadata under owner-scoped RLS.
 5. **ChatGPT, Claude, and other MCP clients** see only tool results needed for the current request.
 
@@ -28,7 +28,7 @@ Gapwise AI HTTPS API -- encrypt --> Supabase ciphertext
    |                                  v
 ChatGPT / Claude <--- MCP ------ Gapwise AI
    |
-   | personal-item / preference action
+   | preference action
    v
 Gapwise AI -- encrypt --> ai_pending_actions
                               |

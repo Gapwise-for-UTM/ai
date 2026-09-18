@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 
 const EXPECTED_PRIVATE_TOOLS = [
   "get_ai_delegation_status",
@@ -28,6 +29,19 @@ const EXPECTED_PUBLIC_TOOLS = [
 ] as const;
 
 describe("live MCP surface contract", () => {
+  it("exports the registered surface and keeps the README catalog aligned", async () => {
+    execFileSync(process.execPath, ["scripts/mcp-surface-contract.mjs", "--check"]);
+    const manifest = JSON.parse(await readFile("contracts/mcp-live-surface.json", "utf8"));
+    expect(manifest.registeredTools.publicRead).toEqual([...EXPECTED_PUBLIC_TOOLS]);
+    expect([...manifest.registeredTools.privateRead, ...manifest.registeredTools.privateWrite])
+      .toEqual([...EXPECTED_PRIVATE_TOOLS]);
+    const readme = await readFile("README.md", "utf8");
+    const catalog = readme.slice(readme.indexOf("## Live MCP surface"), readme.indexOf("## Architecture and trust boundary"));
+    expect([...catalog.matchAll(/^- `([^`]+)`$/gm)].map((match) => match[1]))
+      .toEqual([...EXPECTED_PUBLIC_TOOLS, ...EXPECTED_PRIVATE_TOOLS]);
+    expect(catalog).toContain(`**${manifest.registeredToolCount} tools**`);
+  });
+
   it("registers exactly the current permissioned private tools in the private route", async () => {
     const source = await readFile("app/api/mcp/route.ts", "utf8");
     const registered = [
