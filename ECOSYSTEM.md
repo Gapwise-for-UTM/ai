@@ -1,19 +1,19 @@
 # Gapwise ecosystem integration
 
-`ai` is the OAuth/MCP trust boundary of the seven-repository Gapwise product ecosystem. It exposes stateless public UTM campus intelligence plus explicitly delegated, minimized student context and bounded actions to compatible AI clients. It does not replace deterministic Gapwise product logic, the public campus API, or the public SDKs.
+`ai` is the OAuth/MCP trust boundary of the seven-repository Gapwise product ecosystem. It exposes stateless public University of Toronto campus intelligence plus explicitly delegated, minimized student context and bounded actions to compatible AI clients. It does not replace deterministic Gapwise product logic, the public campus API, or the public SDKs.
 
-All seven first-party product repositories are owned by the **Gapwise for UTM** GitHub organization (`Gapwise-for-UTM`). Organization-wide GitHub defaults live in the separate `.github` repository. Andrew Muratov remains the creator and primary maintainer.
+All seven first-party product repositories are owned by the **Gapwise for UofT** GitHub organization (`Gapwise-for-UofT`). Organization-wide GitHub defaults live in the separate `.github` repository. Andrew Muratov remains the creator and primary maintainer.
 
 ## Connected surfaces
 
-- GitHub organization: `https://github.com/Gapwise-for-UTM`
-- Core product/API/SDK source: `Gapwise-for-UTM/gapwise`
-- Native Android client: `Gapwise-for-UTM/android`
-- Native iOS client: `Gapwise-for-UTM/ios`
-- AI/MCP source: `Gapwise-for-UTM/ai`
-- Campus data/provenance source: `Gapwise-for-UTM/data`
-- Developer documentation source: `Gapwise-for-UTM/docs`
-- Operational status source: `Gapwise-for-UTM/status`
+- GitHub organization: `https://github.com/Gapwise-for-UofT`
+- Core product/API/SDK source: `Gapwise-for-UofT/gapwise`
+- Native Android client: `Gapwise-for-UofT/android`
+- Native iOS client: `Gapwise-for-UofT/ios`
+- AI/MCP source: `Gapwise-for-UofT/ai`
+- Campus data/provenance source: `Gapwise-for-UofT/data`
+- Developer documentation source: `Gapwise-for-UofT/docs`
+- Operational status source: `Gapwise-for-UofT/status`
 - Public API: `https://api.gapwise.ca/v1`
 - OpenAPI: `https://api.gapwise.ca/openapi.json`
 - Data/provenance: `https://data.gapwise.ca`

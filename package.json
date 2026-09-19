@@ -8,10 +8,10 @@
   "homepage": "https://ai.gapwise.ca",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gapwise-for-UTM/ai.git"
+    "url": "https://github.com/Gapwise-for-UofT/ai.git"
   },
   "bugs": {
-    "url": "https://github.com/Gapwise-for-UTM/ai/issues"
+    "url": "https://github.com/Gapwise-for-UofT/ai/issues"
   },
   "type": "module",
   "engines": {
