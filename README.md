@@ -6,7 +6,7 @@
 
 ### Permissioned intelligence on top of deterministic Gapwise truth.
 
-**The provider-neutral Model Context Protocol (MCP) layer for public UTM campus intelligence and explicitly delegated Gapwise student context.**
+**The provider-neutral Model Context Protocol (MCP) layer for public University of Toronto campus intelligence and explicitly delegated Gapwise student context.**
 
 [![AI Service](https://img.shields.io/badge/AI_Service-ai.gapwise.ca-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)](https://ai.gapwise.ca/api/health)
 [![MCP](https://img.shields.io/badge/MCP-Streamable_HTTP-8B5CF6?style=for-the-badge)](https://ai.gapwise.ca/api/mcp)
@@ -16,7 +16,7 @@
 
 <br />
 
-**[Gapwise](https://gapwise.ca)** · **[Android](https://github.com/Gapwise-for-UTM/android)** · **[iOS](https://github.com/Gapwise-for-UTM/ios)** · **[AI](https://ai.gapwise.ca)** · **[Data](https://data.gapwise.ca)** · **[Docs](https://docs.gapwise.ca)** · **[Status](https://status.gapwise.ca)**
+**[Gapwise](https://gapwise.ca)** · **[Android](https://github.com/Gapwise-for-UofT/android)** · **[iOS](https://github.com/Gapwise-for-UofT/ios)** · **[AI](https://ai.gapwise.ca)** · **[Data](https://data.gapwise.ca)** · **[Docs](https://docs.gapwise.ca)** · **[Status](https://status.gapwise.ca)**
 
 </div>
 
@@ -26,7 +26,7 @@
 
 Gapwise AI is the provider-neutral AI integration layer of **Gapwise**, a privacy-first timetable and campus-intelligence platform for University of Toronto students.
 
-The main [`gapwise`](https://github.com/Gapwise-for-UTM/gapwise) platform owns canonical student state and deterministic timetable/campus calculations. [`android`](https://github.com/Gapwise-for-UTM/android) and [`ios`](https://github.com/Gapwise-for-UTM/ios) provide native clients. Gapwise AI exposes a narrow remote MCP interface to bounded context rather than becoming a second timetable, routing, or planning engine.
+The main [`gapwise`](https://github.com/Gapwise-for-UofT/gapwise) platform owns canonical student state and deterministic timetable/campus calculations. [`android`](https://github.com/Gapwise-for-UofT/android) and [`ios`](https://github.com/Gapwise-for-UofT/ios) provide native clients. Gapwise AI exposes a narrow remote MCP interface to bounded context rather than becoming a second timetable, routing, or planning engine.
 
 > **Gapwise owns the facts. Connected AI clients reason over deterministic public campus data and explicitly delegated private context.**
 
@@ -44,7 +44,7 @@ https://ai.gapwise.ca/api/mcp
 
 The release surface contains **20 tools**.
 
-### Public, stateless UTM campus intelligence
+### Public, stateless University of Toronto campus intelligence
 
 These seven tools require no private Gapwise account context:
 
@@ -149,7 +149,7 @@ Gapwise AI does **not** require an OpenAI or Anthropic API key for normal connec
 
 ## Public developer platform
 
-Applications that need conventional non-MCP UTM campus intelligence can use the canonical public API or first-party SDKs:
+Applications that need conventional non-MCP University of Toronto campus intelligence can use the canonical public API or first-party SDKs:
 
 ```bash
 npm install @gapwise/sdk@0.1.1
@@ -169,15 +169,15 @@ The JavaScript/TypeScript SDK is published on npm and JSR; the Python SDK is pub
 
 | Repository | Role | Primary surface |
 | --- | --- | --- |
-| **[`gapwise`](https://github.com/Gapwise-for-UTM/gapwise)** | Core web/PWA, canonical timetable/gap/routing semantics, public API, OpenAPI, and SDK source | [gapwise.ca](https://gapwise.ca) / [api.gapwise.ca](https://api.gapwise.ca/v1) |
-| **[`android`](https://github.com/Gapwise-for-UTM/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
-| **[`ios`](https://github.com/Gapwise-for-UTM/ios)** | Native Swift + SwiftUI iOS client | iOS app |
-| **[`ai`](https://github.com/Gapwise-for-UTM/ai)** | OAuth/MCP layer for public UTM intelligence and delegated student context | [ai.gapwise.ca](https://ai.gapwise.ca) |
-| **[`data`](https://github.com/Gapwise-for-UTM/data)** | Canonical public UTM campus data, provenance, schemas, validation, and distribution | [data.gapwise.ca](https://data.gapwise.ca) |
-| **[`docs`](https://github.com/Gapwise-for-UTM/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
-| **[`status`](https://github.com/Gapwise-for-UTM/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
+| **[`gapwise`](https://github.com/Gapwise-for-UofT/gapwise)** | Core web/PWA, canonical timetable/gap/routing semantics, public API, OpenAPI, and SDK source | [gapwise.ca](https://gapwise.ca) / [api.gapwise.ca](https://api.gapwise.ca/v1) |
+| **[`android`](https://github.com/Gapwise-for-UofT/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
+| **[`ios`](https://github.com/Gapwise-for-UofT/ios)** | Native Swift + SwiftUI iOS client | iOS app |
+| **[`ai`](https://github.com/Gapwise-for-UofT/ai)** | OAuth/MCP layer for public University of Toronto campus intelligence and delegated student context | [ai.gapwise.ca](https://ai.gapwise.ca) |
+| **[`data`](https://github.com/Gapwise-for-UofT/data)** | Canonical public UTM campus data, provenance, schemas, validation, and distribution | [data.gapwise.ca](https://data.gapwise.ca) |
+| **[`docs`](https://github.com/Gapwise-for-UofT/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
+| **[`status`](https://github.com/Gapwise-for-UofT/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
-All seven first-party product repositories are owned by the **Gapwise for UTM** GitHub organization (`Gapwise-for-UTM`). Organization-wide GitHub defaults live in [`.github`](https://github.com/Gapwise-for-UTM/.github). Andrew Muratov remains the creator and primary maintainer.
+All seven first-party product repositories are owned by the **Gapwise for UTM** GitHub organization (`Gapwise-for-UofT`). Organization-wide GitHub defaults live in [`.github`](https://github.com/Gapwise-for-UofT/.github). Andrew Muratov remains the creator and primary maintainer.
 
 ---
 
@@ -186,7 +186,7 @@ All seven first-party product repositories are owned by the **Gapwise for UTM** 
 Requirements: Node.js 24.x, npm, and a compatible Supabase project for authenticated/delegation flows.
 
 ```bash
-git clone https://github.com/Gapwise-for-UTM/ai.git
+git clone https://github.com/Gapwise-for-UofT/ai.git
 cd ai
 npm ci
 cp .env.example .env.local
