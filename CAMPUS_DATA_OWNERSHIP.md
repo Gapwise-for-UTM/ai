@@ -1,6 +1,6 @@
 # Campus data ownership
 
-Canonical public UTM campus facts and geometry live in `Gapwise-for-UTM/data` under `data/utm`.
+Canonical public UTM campus facts and geometry live in `Gapwise-for-UofT/data` under `data/utm`.
 
 `gapwise` consumes a validated build-time snapshot of that dataset and remains responsible for deterministic routing, gap planning, public API behavior, and SDK contracts. `ai` should continue exposing those deterministic Gapwise semantics through MCP rather than becoming a second campus-data or routing engine.
 
