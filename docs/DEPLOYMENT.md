@@ -1,6 +1,6 @@
 # Deployment
 
-Gapwise AI runs as a separate Vercel project connected to `andrewmuratov/gapwise-ai`. Keeping the integration service separate from the Gapwise web app preserves a clear deployment and secret boundary.
+Gapwise AI runs as a separate Vercel project connected to `Gapwise-for-UofT/ai`. Keeping the integration service separate from the Gapwise web app preserves a clear deployment and secret boundary.
 
 ## Production origins
 

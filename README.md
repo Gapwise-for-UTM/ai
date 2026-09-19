@@ -177,7 +177,7 @@ The JavaScript/TypeScript SDK is published on npm and JSR; the Python SDK is pub
 | **[`docs`](https://github.com/Gapwise-for-UofT/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
 | **[`status`](https://github.com/Gapwise-for-UofT/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
-All seven first-party product repositories are owned by the **Gapwise for UTM** GitHub organization (`Gapwise-for-UofT`). Organization-wide GitHub defaults live in [`.github`](https://github.com/Gapwise-for-UofT/.github). Andrew Muratov remains the creator and primary maintainer.
+All seven first-party product repositories are owned by the **Gapwise for UofT** GitHub organization (`Gapwise-for-UofT`). Organization-wide GitHub defaults live in [`.github`](https://github.com/Gapwise-for-UofT/.github). Andrew Muratov remains the creator and primary maintainer.
 
 ---
 
