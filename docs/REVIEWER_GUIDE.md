@@ -11,7 +11,7 @@ This document is the canonical review and directory-submission guide for the Gap
 - Privacy: `https://gapwise.ca/privacy`
 - Terms: `https://gapwise.ca/terms`
 - Support: `https://gapwise.ca/support`
-- Security policy: `https://github.com/Gapwise-for-UTM/ai/security/policy`
+- Security policy: `https://github.com/Gapwise-for-UofT/ai/security/policy`
 
 Gapwise is an independent student-built service and is not an official University of Toronto service.
 
